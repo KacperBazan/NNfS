@@ -39,6 +39,8 @@
         "stdexcept": "cpp",
         "streambuf": "cpp",
         "typeinfo": "cpp",
-        "cassert": "cpp"
+        "cassert": "cpp",
+        "ctime": "cpp",
+        "numeric": "cpp"
     }
 }
