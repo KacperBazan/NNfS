@@ -9,7 +9,6 @@ Layer_Dense::Layer_Dense(int n_inputs, int n_outputs)
 {
     m_weights = MyRandom::rand_mat(n_inputs, n_outputs, -0.1, 0.1);
     m_biases = MyRandom::rand_mat(1, n_outputs, 0.0, 0.0);
-    //std::cout << "Created!\n";
 }
 
 mat_t Layer_Dense::forward(const mat_t &inputs)

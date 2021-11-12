@@ -18,5 +18,13 @@ double MyRandom::rand(double min, double max)
 mat_t MyRandom::rand_mat(int rows, int cols, double min, double max)
 {
     std::uniform_real_distribution<double> range{min, max};
-    return mat_t(rows, vec_t(cols, range(MyRandom::rng)));
+    mat_t out{mat_t(rows, vec_t(cols))};
+    for (auto &row : out)
+    {
+        for (auto &col : row)
+            col = range(MyRandom::rng);
+    }
+    return out;
 }
+
+std::mt19937 MyRandom::rng{static_cast<std::mt19937::result_type>(std::time(nullptr))};
