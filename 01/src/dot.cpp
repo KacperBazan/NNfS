@@ -11,13 +11,12 @@ mat_t dot(const mat_t &a, const mat_t &b)
 
     for (size_t i = 0; i < a.size(); ++i)
     {
-        std::cout << "Index: [" <<
         for (size_t j = 0; j < b[0].size(); ++j)
         {
             double val{0.0};
             for (size_t k = 0; k < a[0].size(); k++)
             {
-                val += a[i][j + k] * b[i + k][j];
+                val += a[i][k] * b[k][j];
             }
             out[i][j] = val;
         }

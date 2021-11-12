@@ -8,9 +8,7 @@
 Layer_Dense::Layer_Dense(int n_inputs, int n_outputs)
 {
     m_weights = MyRandom::rand_mat(n_inputs, n_outputs, -0.1, 0.1);
-    std::cout << '\n';
     m_biases = MyRandom::rand_mat(1, n_outputs, 0.0, 0.0);
-    std::cout << "---------------------\n";
 }
 
 mat_t Layer_Dense::forward(const mat_t &inputs)
@@ -20,7 +18,7 @@ mat_t Layer_Dense::forward(const mat_t &inputs)
     {
         for (size_t j = 0; j < m_outputs[0].size(); j++)
         {
-            m_outputs[i][j] += m_biases[1][j];
+            m_outputs[i][j] += m_biases[0][j];
         }
     }
     return m_outputs;
@@ -28,16 +26,28 @@ mat_t Layer_Dense::forward(const mat_t &inputs)
 
 void Layer_Dense::print() const
 {
-    std::cout << "Weights\n";
-    // for (const auto &row : m_weights)
-    // {
-    //     std::cout << "| ";
-    //     for (const auto &col : row)
-    //     {
-    //         std::cout << col << " | ";
-    //     }
-    //     std::cout << "\n";
-    // }
+    std::cout << "Weights:\n";
+    for (const auto &row : m_weights)
+    {
+        for (const auto &col : row)
+        {
+            std::cout << col << "\t";
+        }
+        std::cout << "\n";
+    }
+
+    std::cout << "\nBiases:\n";
+    for (const auto &row : m_biases)
+    {
+        for (const auto &col : row)
+        {
+            std::cout << col << "\t";
+        }
+        std::cout << "\n";
+    }
+
+    std::cout << "\nOutputs:\n"
+    
 }
 
 // Layer_Dense::Layer_Dense operator+(const vec_t &biases)
