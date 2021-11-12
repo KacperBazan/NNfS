@@ -1,9 +1,7 @@
+#include "standard.hpp"
 #include "dot.hpp"
 #include <vector>
 #include <cassert>
-
-typedef std::vector<std::vector<double>> mat_t;
-typedef std::vector<double> vec_t;
 
 mat_t dot(const mat_t &a, const mat_t &b)
 {
@@ -19,6 +17,8 @@ mat_t dot(const mat_t &a, const mat_t &b)
             {
                 val += a[i][j + k] * b[i + k][j];
             }
+            out[i][j] = val;
         }
     }
+    return out;
 }

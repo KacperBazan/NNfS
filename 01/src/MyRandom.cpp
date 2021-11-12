@@ -1,10 +1,8 @@
+#include "standard.hpp"
 #include "MyRandom.hpp"
 #include <random>
 #include <vector>
 #include <ctime>
-
-typedef std::vector<std::vector<double>> mat_t;
-typedef std::vector<double> vec_t;
 
 namespace MyRandom
 {

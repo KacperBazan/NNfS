@@ -1,7 +1,7 @@
-#include <vector>
+#pragma once
 
-typedef std::vector<std::vector<double>> mat_t;
-typedef std::vector<double> vec_t;
+#include "standard.hpp"
+#include <vector>
 
 class Layer_Dense
 {
@@ -12,5 +12,7 @@ private:
 
 public:
     Layer_Dense(int n_inputs, int n_outputs);
-    vec_t forward(const mat_t &inputs);
+    mat_t forward(const mat_t &inputs);
+
+    //Layer_Dense operator+(const vec_t &biases);
 };
