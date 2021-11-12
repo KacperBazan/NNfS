@@ -46,8 +46,8 @@ void Layer_Dense::print() const
         std::cout << "\n";
     }
 
-    std::cout << "\nOutputs:\n"
-    
+    std::cout << "\nOutputs:\n";
+
 }
 
 // Layer_Dense::Layer_Dense operator+(const vec_t &biases)
