@@ -1,6 +1,8 @@
 #include "layerOutput.hpp"
 #include <iostream>
 #include <vector>
+
+typedef std::vector<std::vector<double>> mat_t;
 typedef std::vector<double> vec_t;
 
 //vec_t inputs = {1.0, 2.0, 3.0, 2.5};
