@@ -1,8 +1,15 @@
 #pragma once
 
 #include "standard.hpp"
-#include <vector>
+#include <random>
+#include <ctime>
 
-int randi(int min, int max);
-double rand(double min = 0, double max = 1.0);
-mat_t rand_mat(int rows, int cols, double min, double max)
+class MyRandom
+{
+    static std::mt19937 rng;
+    static int randi(int min, int max);
+    static double rand(double min, double max);
+    static mat_t rand_mat(int rows, int cols, double min, double max);
+};
+
+std::mt19937 MyRandom::rng{static_cast<std::mt19937::result_type>(std::time(nullptr))};
