@@ -13,6 +13,7 @@ private:
 public:
     Layer_Dense(int n_inputs, int n_outputs);
     mat_t forward(const mat_t &inputs);
+    void print() const;
 
     //Layer_Dense operator+(const vec_t &biases);
 };

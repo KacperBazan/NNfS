@@ -10,11 +10,5 @@ int main()
 {
     Layer_Dense layer1{4, 5};
     mat_t outputs = layer1.forward(X);
-
-    for (size_t i = 0; i < 20; i++)
-    {
-        std::cout << MyRandom::rand(0.0, 10.0) << ' ';
-    }
-
     return 0;
 }

@@ -11,7 +11,7 @@
 				"-I../include/",
 				"*.cpp",
 				"-o",
-				"${fileDirname}\\${fileBasenameNoExtension}.exe",
+				"${fileDirname}\\main.exe",
 			],
 			"options": {
 				"cwd": "${fileDirname}"

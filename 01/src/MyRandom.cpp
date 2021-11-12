@@ -1,6 +1,7 @@
 #include "standard.hpp"
 #include "MyRandom.hpp"
 #include <random>
+#include <iostream>
 #include <ctime>
 
 int MyRandom::randi(int min, int max)
@@ -23,6 +24,16 @@ mat_t MyRandom::rand_mat(int rows, int cols, double min, double max)
     {
         for (auto &col : row)
             col = range(MyRandom::rng);
+    }
+
+    std::cout << "Random Mat: [" << rows << "," << cols << "]\n";
+    for (size_t i = 0; i < rows; i++)
+    {
+        for (size_t j = 0; j < cols; j++)
+        {
+            std::cout << out[i][j] << ", ";
+        }
+        std::cout << '\n';
     }
     return out;
 }
