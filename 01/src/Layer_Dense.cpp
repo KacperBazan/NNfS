@@ -47,7 +47,14 @@ void Layer_Dense::print() const
     }
 
     std::cout << "\nOutputs:\n";
-
+    for (const auto &row : m_outputs)
+    {
+        for (const auto &col : row)
+        {
+            std::cout << col << " \t";
+        }
+        std::cout << "\n";
+    }
 }
 
 // Layer_Dense::Layer_Dense operator+(const vec_t &biases)

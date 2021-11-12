@@ -15,5 +15,9 @@ public:
     mat_t forward(const mat_t &inputs);
     void print() const;
 
+    const mat_t &weights() const { return m_weights; }
+    const mat_t &biases() const { return m_biases; }
+    const mat_t &outputs() const { return m_outputs; }
+
     //Layer_Dense operator+(const vec_t &biases);
 };
