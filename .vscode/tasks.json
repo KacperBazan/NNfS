@@ -8,10 +8,12 @@
 			"args": [
 				"-fdiagnostics-color=always",
 				"-g",
-				"-I../include/",
-				"*.cpp",
+				"-I${workspaceFolder}/01/include/",
+				"-I${workspaceFolder}/01/include/utility/",
+				"${workspaceFolder}/01/src/*.cpp",
+				"${workspaceFolder}/01/src/utility/*.cpp",
 				"-o",
-				"${fileDirname}\\main.exe",
+				"${workspaceFolder}/01/build/main.exe"
 			],
 			"options": {
 				"cwd": "${fileDirname}"

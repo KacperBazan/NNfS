@@ -1,8 +1,6 @@
 #include "standard.hpp"
 #include "dot.hpp"
-#include <vector>
 #include <cassert>
-#include <iostream>
 
 mat_t dot(const mat_t &a, const mat_t &b)
 {

@@ -1,7 +1,6 @@
 #include "standard.hpp"
 #include "MyRandom.hpp"
 #include <random>
-#include <iostream>
 #include <ctime>
 
 int MyRandom::randi(int min, int max)

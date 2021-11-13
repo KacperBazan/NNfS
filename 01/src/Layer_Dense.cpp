@@ -2,7 +2,6 @@
 #include "Layer_Dense.hpp"
 #include "MyRandom.hpp"
 #include "dot.hpp"
-#include <cassert>
 #include <iostream>
 
 Layer_Dense::Layer_Dense(int n_inputs, int n_outputs)

@@ -1,7 +1,6 @@
 #pragma once
 
 #include "standard.hpp"
-#include <vector>
 
 class Layer_Dense
 {
