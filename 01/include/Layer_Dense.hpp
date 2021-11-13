@@ -10,7 +10,7 @@ private:
     mat_t m_outputs{};
 
 public:
-    Layer_Dense(int n_inputs, int n_outputs);
+    Layer_Dense(const int n_inputs, const int n_outputs);
     mat_t forward(const mat_t &inputs);
     void print() const;
 
@@ -18,5 +18,5 @@ public:
     const mat_t &biases() const { return m_biases; }
     const mat_t &outputs() const { return m_outputs; }
 
-    //Layer_Dense operator+(const vec_t &biases);
+    //Layer_Dense operator+(const mat_t &biases);
 };

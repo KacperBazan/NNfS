@@ -4,7 +4,7 @@
 #include "dot.hpp"
 #include <iostream>
 
-Layer_Dense::Layer_Dense(int n_inputs, int n_outputs)
+Layer_Dense::Layer_Dense(const int n_inputs, const int n_outputs)
 {
     m_weights = MyRandom::rand_mat(n_inputs, n_outputs, -0.1, 0.1);
     m_biases = MyRandom::rand_mat(1, n_outputs, 0.0, 0.0);
@@ -56,6 +56,6 @@ void Layer_Dense::print() const
     }
 }
 
-// Layer_Dense::Layer_Dense operator+(const vec_t &biases)
+// Layer_Dense::Layer_Dense operator+(const mat_t &biases)
 // {
 // }
