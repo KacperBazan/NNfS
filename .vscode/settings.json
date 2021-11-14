@@ -44,6 +44,7 @@
         "numeric": "cpp",
         "functional": "cpp",
         "iterator": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "iomanip": "cpp"
     }
 }

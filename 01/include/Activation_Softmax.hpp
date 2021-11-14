@@ -1,7 +1,7 @@
 #pragma once
 #include "standard.hpp"
 
-class Activation_ReLU
+class Activation_Softmax
 {
 private:
     mat_t m_outputs{};
