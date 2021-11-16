@@ -13,6 +13,5 @@ public:
     static int randi(int min, int max);
     static double rand(double min, double max);
     static mat_t rand_mat(int rows, int cols, double min, double max);
-
-    
+    static vec_t rand_vec(int cols, double min, double max);
 };
