@@ -1,12 +1,13 @@
-#include "standard.hpp"
 #include "spiralData.hpp"
-#include "MyRandom.hpp"
-#include <math.h>
+#include "standard.hpp" //for mat_t, vec_t
+#include "MyRandom.hpp" //for MyRandom
+#include <math.h>       //for cos, sin
 
+//---Makes tuple of matrix of 2D points and vector classifying points.
 std::tuple<mat_t, vec_t> spiralData(const int points, const int classes)
 {
-    mat_t X{mat_t(points * classes, vec_t(2))};
-    vec_t y{vec_t(points * classes)};
+    mat_t X{mat_t(points * classes, vec_t(2))}; //Holds (x,y) coordinates
+    vec_t y{vec_t(points * classes)};           //Distinguishes the type of class
     double r{};
     double t{};
     for (size_t i = 0; i < classes; ++i)

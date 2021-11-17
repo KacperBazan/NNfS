@@ -1,4 +1,5 @@
 #pragma once
+
 #include "standard.hpp"
 #include <iostream>
 
@@ -12,7 +13,7 @@ public:
     mat_t forward(const mat_t &inputs);
 
     //---Overloaded std::ostream operator for printing.
-    friend std::ostream &operator<<(std::ostream &out, const Activation_ReLU &a);
+    friend std::ostream &operator<<(std::ostream &out, const Activation_ReLU &A);
 
     //---Getter for the m_outputs.
     const mat_t &outputs() const { return m_outputs; }
