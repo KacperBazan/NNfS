@@ -25,30 +25,26 @@ mat_t Layer_Dense::forward(const mat_t &inputs)
 //---Overloaded std::ostream operator for printing.
 std::ostream &operator<<(std::ostream &out, const Layer_Dense &L)
 {
-    std::cout << "Weights:\n";
+    out << "Weights:\n";
     for (const auto &row : L.m_weights)
     {
         for (const auto &col : row)
-        {
-            std::cout << col << "  ";
-        }
-        std::cout << "\n";
+            out << col << "  ";
+        out << "\n";
     }
 
-    std::cout << "\nBiases:\n";
+    out << "\nBiases:\n";
     for (const auto &row : L.m_biases)
-    {
-        std::cout << row << "  ";
-    }
-    std::cout << "\n";
+        out << row << "  ";
+    out << "\n";
 
-    std::cout << "\nOutputs:\n";
+    out << "\nOutputs:\n";
     for (const auto &row : L.m_outputs)
     {
         for (const auto &col : row)
-        {
-            std::cout << col << "  ";
-        }
-        std::cout << "\n";
+            out << col << "  ";
+        out << "\n";
     }
+
+    return out;
 }

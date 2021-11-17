@@ -38,7 +38,7 @@ std::ostream &operator<<(std::ostream &out, const Activation_Softmax &S)
     for (const auto &row : S.m_outputs)
     {
         for (const auto &col : row)
-            out << col << "\t";
+            out << col << "  ";
         out << "\n";
     }
     return out;

@@ -27,7 +27,7 @@ std::ostream &operator<<(std::ostream &out, const Activation_ReLU &A)
     for (const auto &row : A.m_outputs)
     {
         for (const auto &col : row)
-            out << col << "\t";
+            out << col << "  ";
         out << "\n";
     }
     return out;
