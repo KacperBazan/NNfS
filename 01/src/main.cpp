@@ -3,6 +3,7 @@
 #include "spiralData.hpp"         //for spiralData
 #include "Activation_ReLU.hpp"    //for Activation_ReLU class
 #include "Activation_Softmax.hpp" //for Activation_Softmax class
+#include "Loss.hpp"               //for Loss class
 #include <iostream>               //for std::cout
 #include <tuple>                  //for std::get<>
 
@@ -27,4 +28,8 @@ int main()
 
     dense2.forward(act1.outputs()); //act1.out --> d2 layer --> d2.out
     act2.forward(dense2.outputs()); //d2.out --> SoftMax --> act2.out
+
+    Loss loss{};
+    loss.calculate(act2.outputs(), y);
+    std::cout << loss;
 }

@@ -1,6 +1,7 @@
 #pragma once
 
-#include "standard.hpp" // for mat_t, vec_t
+#include "standard.hpp"
+#include <iostream>
 
 class Loss
 {
@@ -9,6 +10,8 @@ private:
     double m_data_loss{};
 
 public:
-    vec_t calculate(const mat_t &softmax_outputs, const vec_t &targets);
-    vec_t calculate(const mat_t &softmax_outputs, const mat_t &one_hot_encoded);
+    double calculate(const mat_t &softmax_outputs, const vec_t &targets);
+    double calculate(const mat_t &softmax_outputs, const mat_t &one_hot_encoded);
+
+    friend std::ostream &operator<<(std::ostream &out, const Loss &L);
 };
