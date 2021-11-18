@@ -7,7 +7,7 @@
 #include <algorithm>
 
 //---Loss function that takes softmax values and returns an average loss.
-void Loss::calculate(const mat_t &softmax_vals, const vec_t &target_classes)
+vec_t Loss::calculate(const mat_t &softmax_vals, const vec_t &target_classes)
 {
     //The length of the batch must equal the length of the class identifiers for said batch.
     assert(softmax_vals.size() == target_classes.size() && "Size Mismatch - Target Classes");
@@ -25,4 +25,24 @@ void Loss::calculate(const mat_t &softmax_vals, const vec_t &target_classes)
         double clamped_val{std::clamp(softmax_vals[i][index], 1.0e-7, 1.0 - 1.0e-7)};
         m_sample_losses[i] = -log(clamped_val);
     }
+
+    return m_sample_losses;
+}
+
+vec_t Loss::calculate(const mat_t &softmax_vals, const mat_t &one_hot_encoded)
+{
+    vec_t target_classes{vec_t(one_hot_encoded.size())};
+    for (size_t i = 0; i < one_hot_encoded.size(); i++)
+    {
+        for (size_t j = 0; j < one_hot_encoded[0].size(); j++)
+        {
+            if (static_cast<int>(one_hot_encoded[i][j]) == 1)
+            {
+                target_classes[i] = j;
+                break;
+            }
+            target_classes[i] = -1;
+        }
+    }
+    return calculate(softmax_vals, target_classes);
 }
