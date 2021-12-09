@@ -9,8 +9,8 @@
 
 int main()
 {
-    const int samples{5}; //100 2D points per sample.
-    const int classes{3}; //3 samples.
+    const int samples{3}; //100 2D points per sample.
+    const int classes{2}; //3 samples.
 
     //auto [X, y] = spiralData(100, 3); // Why the fuck does this give VSCode an intellisense error.
     auto data = spiralData(samples, classes);
@@ -23,11 +23,19 @@ int main()
     Layer_Dense dense2{3, classes};
     Activation_Softmax act2{};
 
+    std::cout << data << '\n';
+
     dense1.forward(X);              // X --> d1 layer --> d1.out
     act1.forward(dense1.outputs()); //d1.out --> ReLU --> act1.out
 
+    std::cout << dense1 << '\n';
+    std::cout << act1 << '\n';
+
     dense2.forward(act1.outputs()); //act1.out --> d2 layer --> d2.out
     act2.forward(dense2.outputs()); //d2.out --> SoftMax --> act2.out
+
+    std::cout << dense2 << '\n';
+    std::cout << act2 << '\n';
 
     Loss loss{};
     loss.calculate(act2.outputs(), y);
